@@ -27,3 +27,11 @@ sudo find . -type f -print0 | xargs -0 sudo chmod 640
 sudo apt-get install gdebi-core
 wget https://download2.rstudio.org/server/bionic/amd64/rstudio-server-1.3.1093-amd64.deb
 sudo gdebi rstudio-server-1.3.1093-amd64.deb
+
+install datasets
+RColorBewer
+tidyverse
+
+# R_Course
+while read user pass; do sudo mkdir -p /home/$user/{Day1,Day2,Day3,Day4}/{archive,datasets,output/{data,visualizations},R_scripts}; done <students.tsv
+while read user pass; do sudo chown -R $user:$user /home/$user; done <students.tsv
